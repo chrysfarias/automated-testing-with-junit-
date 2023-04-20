@@ -14,7 +14,7 @@ class BonusServiceTest {
 	@Test
 	void bonusDeveriaSerZeroParaFuncionariosComSalarioAlto() {
 		BonusService service = new BonusService();
-		BigDecimal bonus = service.calcularBonus(new Funcionario("Carlos",LocalDate.now(),new BigDecimal("100000")));
+		BigDecimal bonus = service.calcularBonus(new Funcionario("Carlos",LocalDate.now(),new BigDecimal("10001")));
 		
 		assertEquals(BigDecimal.ZERO, bonus);
 	}
@@ -26,6 +26,15 @@ class BonusServiceTest {
 		BigDecimal bonus = service.calcularBonus(new Funcionario("Carlos",LocalDate.now(),new BigDecimal("3000")));
 		
 		assertEquals(new BigDecimal("300.0"), bonus);
+	}
+	
+	@Test
+	void bonusDeveriSer10PorCentoParaSalarioDeExatamente10000() {
+		BonusService service = new BonusService();
+		BigDecimal bonus = service.calcularBonus(new Funcionario("Carlos",LocalDate.now(),new BigDecimal("10000")));
+		
+		assertEquals(new BigDecimal("1000.0"), bonus);
+		
 	}
 
 }
