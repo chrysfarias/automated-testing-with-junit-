@@ -1,6 +1,7 @@
 package br.com.tdd.modelo;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Funcionario {
@@ -9,6 +10,7 @@ public class Funcionario {
 	private LocalDate dataAdmissao;
 	private BigDecimal salario;
 	private String desempenho;
+	private BigDecimal ajusteSalarial;
 
 	public Funcionario(String nome, LocalDate dataAdmissao, BigDecimal salario) {
 		this.nome = nome;
@@ -33,9 +35,15 @@ public class Funcionario {
 	}
 
 	public void reajustarSalario(BigDecimal reajuste) {
-		this.salario = this.salario.add(reajuste);
-		
+		this.ajusteSalarial = reajuste;
+		this.salario = this.salario.add(reajuste);	
 	}
+	
+	public BigDecimal getajusteSalarial() {
+		return this.ajusteSalarial;
+	}
+	
+	
 
 
 }
