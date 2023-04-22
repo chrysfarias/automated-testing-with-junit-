@@ -1,12 +1,9 @@
 package br.com.tdd.service;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import org.junit.jupiter.api.Test;
-
 import br.com.tdd.modelo.Desempenho;
 import br.com.tdd.modelo.Funcionario;
 

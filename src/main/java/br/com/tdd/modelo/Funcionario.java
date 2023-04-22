@@ -1,7 +1,6 @@
 package br.com.tdd.modelo;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Funcionario {
