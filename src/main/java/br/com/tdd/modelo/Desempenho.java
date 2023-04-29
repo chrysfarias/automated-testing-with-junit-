@@ -24,6 +24,14 @@ public enum Desempenho {
 			BigDecimal reajusteCalculado = funcionario.getSalario().multiply(new BigDecimal("0.2").setScale(2,RoundingMode.HALF_UP));
 			return reajusteCalculado;
 		}
+		
+	
+	},ESPETACULAR{
+		@Override
+		public BigDecimal percentualReajuste(Funcionario funcionario) {
+			BigDecimal reajusteCalculado = funcionario.getSalario().multiply(new BigDecimal("0.4").setScale(2,RoundingMode.HALF_UP));
+			return reajusteCalculado;
+		}
 	};
 	 
 	
